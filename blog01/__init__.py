@@ -1,0 +1,1 @@
+default_app_config = 'blog01.apps.Blog01Config'

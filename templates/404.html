@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+{% load staticfiles %}
+<head>
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" media="screen, projection" /> <!-- main stylesheet -->
+<link rel="stylesheet" type="text/css" media="all" href="{% static 'css/tipsy.css' %}" /> <!-- Tipsy implementation -->
+
+
+<title>404 - Not found</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+
+<!-- Universal preloader -->
+<div id="universal-preloader">
+    <div class="preloader">
+        <img src="{% static 'images/planet.png' %}" alt="universal-preloader" class="universal-preloader-preloader" />
+    </div>
+</div>
+<!-- Universal preloader -->
+
+<div id="wrapper">
+<!-- 404 graphic -->
+	<div class="graphic"></div>
+<!-- 404 graphic -->
+<!-- Not found text -->
+	<div class="not-found-text">
+    	<h1 class="not-found-text">File not found, sorry!</h1>
+    </div>
+<!-- Not found text -->
+
+<div class="dog-wrapper">
+<!-- dog running -->
+	<div class="dog"></div>
+<!-- dog running -->
+
+<!-- dog bubble talking -->
+	<div class="dog-bubble">
+
+    </div>
+
+    <!-- The dog bubble rotates these -->
+    <!-- The dog bubble rotates these -->
+<!-- dog bubble talking -->
+</div>
+
+<!-- planet at the bottom -->
+	<div class="planet"></div>
+<!-- planet at the bottom -->
+</div>
+
+
+</body>
+</html>

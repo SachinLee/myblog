@@ -1,0 +1,58 @@
+{% extends 'index_base.html' %}
+{% load staticfiles %}
+
+{% block title %}Sachin's Blog{% endblock %}
+{% block foolter %}sachinlee{% endblock %}
+
+{% block bread %}
+    <h2>您现在的位置是：
+        <a href="{% url 'index' %}">首页</a>
+          >
+        <a>{{ blogcate.name }}列表</a>
+    </h2>
+{% endblock %}
+
+{% block blog_category %}
+    {% for category in all_category %}
+        <li><a href="{% url 'list_article' category.name %}">{{ category.name }}</a></li>
+    {% endfor %}
+{% endblock %}
+
+{% block blogs_list %}
+    {% for blog in all_blog.object_list %}
+        <div class="blogs">
+{#            <figure><img src="{% static 'images/01.jpg' %}"></figure>#}
+            <ul>
+              <h3><a href="{% url 'article' blog.id %}">{{ blog.title }}</a></h3>
+              <p>{{ blog.content|truncatechars_html:80 | safe }}</p>
+              <p class="autor"><span class="lm f_l"><a href="/">{{ blog.category.name }}</a></span><span class="dtime f_l">{{ blog.add_time }}</span><span class="viewnum f_r">浏览（<a href="/">{{ blog.poll_num }}</a>）</span><span class="pingl f_r">评论（<a href="/">{{ blog.keep_num }}</a>）</span></p>
+            </ul>
+      </div>
+    {% endfor %}
+{% endblock %}
+
+{% block user_desc %}
+      <p>网名：Sachin</p>
+      <p>职业：暂无 </p>
+      <p>籍贯：湖北省-襄阳市</p>
+      <p>电话：189**********</p>
+      <p>邮箱：sachinlee@qq.com</p>
+{% endblock %}
+
+{% block hot_click %}
+    {% for blog in hot_clickblogs %}
+        <li><a href="{% url 'article' blog.id %}" target="_blank">{{ blog.title }}</a></li>
+    {% endfor %}
+{% endblock %}
+
+{% block hot_new %}
+    {% for blog in hot_newblogs %}
+        <li><a href="{% url 'article' blog.id %}" target="_blank">{{ blog.title }}</a></li>
+    {% endfor %}
+{% endblock %}
+
+{% block hot_tui %}
+    {% for blog in hot_tuiblogs %}
+        <li><a href="{% url 'article' blog.id %}" target="_blank">{{ blog.title }}</a></li>
+    {% endfor %}
+{% endblock %}
